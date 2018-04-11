@@ -41,15 +41,6 @@ class Filer:
     # Renees:
     @staticmethod
     def read_csv(file_name):
-        """
-        >>> Filer.read_csv('notFile.csv')
-        Traceback (most recent call last):
-        ...
-        FileNotFoundError: No such file or directory
-
-        >>> Filer.read_csv('test_renee.csv')
-        [['EMPID', 'GENDER', 'AGE', 'SALES', 'BMI', 'SALARY', 'BIRTHDAY'], ['A001', 'M', '26', '200', 'Normal', '20', '08-10-1991'], ['A002', 'F', '26', '300', 'Normal', '30', '09-10-1991']]
-        """
         try:
             if os.path.isfile(file_name):
                 with open(file_name, newline='') as file_data:
@@ -74,19 +65,7 @@ class Filer:
     @staticmethod
     def save_csv(file_name, employee_list):
         """
-        >>> Filer.save_csv('saveFile.csv',[('A001', 'M', 26, 200, 'Normal', 20, '08-10-1991'), ('A002', 'F', 26, 300, 'Normal', 30, '09-10-1991')])
-        Data is saved
 
-        >>> Filer.read_csv('saveFile.csv')
-        [['A001', 'M', '26', '200', 'Normal', '20', '08-10-1991'], ['A002', 'F', '26', '300', 'Normal', '30', '09-10-1991']]
-
-        >>> Filer.save_csv('saveFile1.csv')
-        Traceback (most recent call last):
-        ...
-        TypeError: save_csv() missing 1 required positional argument: 'employee_list'
-
-        >>> Filer.save_csv('#######.csv', [1,2,3])
-        can not save the file #######.csv
 
         """
         try:
@@ -118,8 +97,7 @@ class Filer:
     @staticmethod
     def save_txt_file(file_name, employee_list):
         """
-        >>> Filer.save_txt_file('saveFile.txt',[('A001', 'M', 26, 200, 'Normal', 20, '08-10-1991'), ('A002', 'F', 26, 300, 'Normal', 30, '09-10-1991')])
-        Data saved to file
+
         """
         try:
             with open(file_name, "w") as f:

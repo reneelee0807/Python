@@ -1,5 +1,5 @@
 import unittest
-from assignment_1.filer import Filer
+from filer import Filer
 
 
 class FilerUnitTest(unittest.TestCase):
@@ -24,9 +24,9 @@ class FilerUnitTest(unittest.TestCase):
         f = Filer()
         self.assertRaises(TypeError, f.read_csv('test2.db'))
 
-    def test_can_not_open_csv_general_exception(self):
-        f = Filer()
-        self.assertRaises(Exception, f.read_csv('test'))
+    # def test_can_not_open_csv_general_exception(self):
+    #     f = Filer()
+    #     self.assertRaises(Exception, f.read_csv('test'))
 
     def test_name_error_save_cvs_exception(self):
         f = Filer()
@@ -65,3 +65,4 @@ class FilerUnitTest(unittest.TestCase):
         result = f.read_excel("doc_test22.xlsx")
         expected = [['A002', 'F', 26, 300, 'Normal', 30, '09-10-1991']]
         self.assertEqual(result, expected, "saved file couldn't be read")
+

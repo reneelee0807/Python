@@ -1,4 +1,10 @@
 from test.unit_test_filer import FilerUnitTest
+from test.unit_test_validator import ValidatorUnitTest
+# import sys
+# sys.path.insert(0, 'path/to/test/')
+# import unit_test_filer
+
+
 import doctest
 import unittest
 
@@ -12,7 +18,7 @@ def unit_tests():
     the_suite = unittest.TestSuite()
 
     the_suite.addTest(unittest.makeSuite(FilerUnitTest))
-    # the_suite.addTest(unittest.makeSuite(FilerTests))
+    the_suite.addTest(unittest.makeSuite(ValidatorUnitTest))
     # the_suite.addTest(unittest.makeSuite(ControllerTests))
 
     return the_suite
