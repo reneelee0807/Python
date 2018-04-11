@@ -1,0 +1,63 @@
+"""
+>>> from validator import Validator
+>>> v = Validator()
+
+>>> v.validate_emp_id("A001")
+True
+
+>>> v.validate_emp_id("A0001")
+False
+
+>>> v.validate_emp_id("0001")
+False
+
+>>> v.validate_emp_id("AAAA")
+False
+
+>>> v.validate_emp_id("A01")
+False
+
+>>> v.validate_emp_id("a001")
+False
+
+>>> Validator.validate_gender("F")
+True
+
+>>> Validator.validate_gender("f")
+False
+
+>>> Validator.validate_gender("Female")
+False
+
+>>> Validator.validate_gender("FEMALE")
+False
+
+>>> Validator.validate_gender("E")
+False
+
+>>> Validator.validate_salary("23")
+True
+
+>>> Validator.validate_salary("244")
+True
+
+>>> Validator.validate_salary("4000")
+False
+
+>>> Validator.validate_date("10-09-1991")
+True
+
+>>> Validator.validate_date("10/1/1991")
+False
+
+>>> Validator.validate_date("33/22/1991")
+False
+
+>>> Validator.validate_age("10")
+True
+
+>>> Validator.validate_age("five")
+False
+
+>>> Validator.validate_age("500")
+False
