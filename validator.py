@@ -39,15 +39,9 @@ class Validator:
         values = ['F', 'M']
         return self.validate_data(values, gender)
 
-
-    # Chamilas
-    @staticmethod
-    def validate_bmi(bmi):
-        bmi_values = ['Normal', 'Overweight', 'Underweight', 'Obesity']
-        if bmi in bmi_values:
-            return True
-        else:
-            return False
+    def validate_bmi(self, bmi):
+        values = ['Normal', 'Overweight', 'Underweight', 'Obesity']
+        return self.validate_data(values, bmi)
 
     # Jono's
     @staticmethod

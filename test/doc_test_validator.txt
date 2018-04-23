@@ -70,3 +70,12 @@ False
 
 >>> v.validate_age("500")
 False
+
+>>> v.validate_bmi("OVERWEIGHT")
+False
+
+>>> v.validate_bmi("harvey")
+False
+
+>>> v.validate_bmi("Overweight")
+True
