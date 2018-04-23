@@ -37,35 +37,40 @@ class ValidatorUnitTest(unittest.TestCase):
         """
         Test the validate gender function
         """
-        result = Validator.validate_gender("F")
+        v = Validator()
+        result = v.validate_gender("F")
         self.assertTrue(result, 'valid GENDER')
 
     def test_validate_gender_with_lowcase_is_false(self):
         """
         Test the validate gender function
         """
-        result = Validator.validate_gender("f")
+        v = Validator()
+        result = v.validate_gender("f")
         self.assertFalse(result, 'valid GENDER')
 
     def test_validate_gender_with_long_input_is_true(self):
         """
         Test the validate gender function
         """
-        result = Validator.validate_gender("Female")
+        v = Validator()
+        result = v.validate_gender("Female")
         self.assertFalse(result, 'invalid GENDER')
 
     def test_validate_gender_with_upper_only_is_False(self):
         """
         Test the validate gender function
         """
-        result = Validator.validate_gender("FEMALE")
+        v = Validator()
+        result = v.validate_gender("FEMALE")
         self.assertFalse(result, 'valid GENDER')
 
     def test_validate_gender_is_false(self):
         """
         Test the validate gender function
         """
-        result = Validator.validate_gender("E")
+        v = Validator()
+        result = v.validate_gender("E")
         self.assertFalse(result, 'invalid GENDER')
     def test_validate_salary_is_true(self):
         """
