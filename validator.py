@@ -16,25 +16,14 @@ class Validator:
         condition = '[A-Z][0-9]{3}'
         return self.validate_item(condition, emp_id)
 
+    def validate_sales(self, sales):
+        condition = re.compile('[0-9]{2,3}')
+        return self.validate_item(condition, sales)
 
-    #  Renee code
-    # @staticmethod
-    # def validate_emp_id(emp_id):
-    #     validate = re.compile('[A-Z][0-9]{3}')
-    #
-    #     if re.fullmatch(validate, emp_id):
-    #         return True
-    #     else:
-    #         return False
+
 
     @staticmethod
     def validate_gender(gender):
-        """
-
-
-        :param gender:
-        :return:
-        """
         gender_values = ['F', 'M']
         tempt = gender
         if tempt in gender_values:
@@ -51,13 +40,7 @@ class Validator:
         else:
             return False
 
-    @staticmethod
-    def validate_sales(sales):
-        check = re.compile('[0-9]{2,3}')
-        if re.fullmatch(check, sales):
-            return True
-        else:
-            return False
+
 
     # Jono's
     @staticmethod
@@ -70,12 +53,6 @@ class Validator:
 
     @staticmethod
     def validate_date(date_string):
-        """
-
-
-        :param date_string:
-        :return:
-        """
         try:
             datetime.datetime.strptime(date_string, '%d-%m-%Y')
             return True
@@ -84,10 +61,6 @@ class Validator:
 
     @staticmethod
     def validate_age(age):
-        """
-        :param age:
-        :return:
-        """
         check = re.compile('[0-9]{2}')
         if re.fullmatch(check, age):
             return True
