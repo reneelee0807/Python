@@ -11,6 +11,7 @@ import unittest
 def doc_tests():
     doctest.testfile("test/doc_test_filer.txt", verbose=1)
     doctest.testfile("test/doc_test_validator.txt", verbose=1)
+    doctest.testfile("test/doc_test_command.txt", verbose=1)
 
 
 def unit_tests():
