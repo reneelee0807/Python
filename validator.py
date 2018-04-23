@@ -29,13 +29,16 @@ class Validator:
         return self.validate_item(condition, age)
 
     @staticmethod
-    def validate_gender(gender):
-        gender_values = ['F', 'M']
-        tempt = gender
-        if tempt in gender_values:
+    def validate_data(values, item):
+        if item in values:
             return True
         else:
             return False
+
+    def validate_gender(self, gender):
+        values = ['F', 'M']
+        return self.validate_data(values, gender)
+
 
     # Chamilas
     @staticmethod
