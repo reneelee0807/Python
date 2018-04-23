@@ -29,7 +29,8 @@ class ValidatorUnitTest(unittest.TestCase):
         self.assertFalse(result, 'invalid employee id')
 
     def test_validate_emp_id_is_false(self):
-        result = Validator.validate_emp_id("A02")
+        v = Validator()
+        result = v.validate_emp_id("A02")
         self.assertFalse(result, 'invalid employee id')
 
     def test_validate_gender_is_true(self):

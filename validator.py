@@ -4,52 +4,33 @@ import re
 
 class Validator:
 
-    #  Renee code
     @staticmethod
-    def validate_emp_id(emp_id):
-        """
-        >>> Validator.validate_emp_id("A001")
-        True
-
-        >>> Validator.validate_emp_id("A0001")
-        False
-
-        >>> Validator.validate_emp_id("0001")
-        False
-
-        >>> Validator.validate_emp_id("AAAA")
-        False
-
-        >>> Validator.validate_emp_id("A01")
-        False
-
-        >>> Validator.validate_emp_id("a001")
-        False
-        """
-        validate = re.compile('[A-Z][0-9]{3}')
-
-        if re.fullmatch(validate, emp_id):
+    def validate_item(condition, item):
+        validate = re.compile(condition)
+        if re.fullmatch(validate, item):
             return True
         else:
             return False
 
+    def validate_emp_id(self, emp_id):
+        condition = '[A-Z][0-9]{3}'
+        return self.validate_item(condition, emp_id)
+
+
+    #  Renee code
+    # @staticmethod
+    # def validate_emp_id(emp_id):
+    #     validate = re.compile('[A-Z][0-9]{3}')
+    #
+    #     if re.fullmatch(validate, emp_id):
+    #         return True
+    #     else:
+    #         return False
+
     @staticmethod
     def validate_gender(gender):
         """
-        >>> Validator.validate_gender("F")
-        True
 
-        >>> Validator.validate_gender("f")
-        False
-
-        >>> Validator.validate_gender("Female")
-        False
-
-        >>> Validator.validate_gender("FEMALE")
-        False
-
-        >>> Validator.validate_gender("E")
-        False
 
         :param gender:
         :return:
@@ -81,20 +62,6 @@ class Validator:
     # Jono's
     @staticmethod
     def validate_salary(salary):
-        """
-        To test 2 digit input
-        >>> Validator.validate_salary("23")
-        True
-
-        To test 3 digit input
-        >>> Validator.validate_salary("244")
-        True
-
-        To test invalid input
-        >>> Validator.validate_salary("4000")
-        False
-        """
-
         check = re.compile('[0-9]{2,3}')
         if re.fullmatch(check, salary):
             return True
@@ -104,17 +71,7 @@ class Validator:
     @staticmethod
     def validate_date(date_string):
         """
-        To test valid date:
-        >>> Validator.validate_date("10-09-1991")
-        True
 
-        To test invalid date format:
-        >>> Validator.validate_date("10/1/1991")
-        False
-
-        To test invalid date
-        >>> Validator.validate_date("33/22/1991")
-        False
 
         :param date_string:
         :return:
@@ -128,18 +85,6 @@ class Validator:
     @staticmethod
     def validate_age(age):
         """
-        To test valid input
-        >>> Validator.validate_age("10")
-        True
-
-        To test invalid input
-        >>> Validator.validate_age("five")
-        False
-
-        To test invalid input, over range
-        >>> Validator.validate_age("500")
-        False
-
         :param age:
         :return:
         """
@@ -163,7 +108,3 @@ class Validator:
 
         return items_valid
 
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod(verbose=True)
