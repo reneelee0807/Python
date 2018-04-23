@@ -24,14 +24,9 @@ class Validator:
         condition = '[0-9]{2,3}'
         return self.validate_item(condition, salary)
 
-
-    @staticmethod
-    def validate_salary(salary):
-        check = re.compile('[0-9]{2,3}')
-        if re.fullmatch(check, salary):
-            return True
-        else:
-            return False
+    def validate_age(self, age):
+        condition = '[0-9]{2}'
+        return self.validate_item(condition, age)
 
     @staticmethod
     def validate_gender(gender):
@@ -51,25 +46,13 @@ class Validator:
         else:
             return False
 
-
-
     # Jono's
-
-
     @staticmethod
     def validate_date(date_string):
         try:
             datetime.datetime.strptime(date_string, '%d-%m-%Y')
             return True
         except ValueError:
-            return False
-
-    @staticmethod
-    def validate_age(age):
-        check = re.compile('[0-9]{2}')
-        if re.fullmatch(check, age):
-            return True
-        else:
             return False
 
     def validate_all(self, employee):
