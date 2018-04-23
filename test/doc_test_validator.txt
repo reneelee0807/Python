@@ -20,44 +20,53 @@ False
 >>> v.validate_emp_id("a001")
 False
 
->>> Validator.validate_gender("F")
+>>> v.validate_gender("F")
 True
 
->>> Validator.validate_gender("f")
+>>> v.validate_gender("f")
 False
 
->>> Validator.validate_gender("Female")
+>>> v.validate_gender("Female")
 False
 
->>> Validator.validate_gender("FEMALE")
+>>> v.validate_gender("FEMALE")
 False
 
->>> Validator.validate_gender("E")
+>>> v.validate_gender("E")
 False
 
->>> Validator.validate_salary("23")
+>>> v.validate_sales("gjhgjh")
+False
+
+>>> v.validate_sales("200")
 True
 
->>> Validator.validate_salary("244")
+>>> v.validate_sales("12222")
+False
+
+>>> v.validate_salary("23")
 True
 
->>> Validator.validate_salary("4000")
-False
-
->>> Validator.validate_date("10-09-1991")
+>>> v.validate_salary("200")
 True
 
->>> Validator.validate_date("10/1/1991")
+>>> v.validate_salary("4000")
 False
 
->>> Validator.validate_date("33/22/1991")
-False
-
->>> Validator.validate_age("10")
+>>> v.validate_date("10-09-1991")
 True
 
->>> Validator.validate_age("five")
+>>> v.validate_date("10/1/1991")
 False
 
->>> Validator.validate_age("500")
+>>> v.validate_date("33/22/1991")
+False
+
+>>> v.validate_age("10")
+True
+
+>>> v.validate_age("five")
+False
+
+>>> v.validate_age("500")
 False
