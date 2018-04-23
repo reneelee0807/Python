@@ -35,22 +35,22 @@ False
 >>> v.validate_gender("E")
 False
 
->>> v.validate_sales("gjhgjh")
+>>> v.validate_sales_salary("gjhgjh")
 False
 
->>> v.validate_sales("200")
+>>> v.validate_sales_salary("200")
 True
 
->>> v.validate_sales("12222")
+>>> v.validate_sales_salary("12222")
 False
 
->>> v.validate_salary("23")
+>>> v.validate_sales_salary("23")
 True
 
->>> v.validate_salary("200")
+>>> v.validate_sales_salary("200")
 True
 
->>> v.validate_salary("4000")
+>>> v.validate_sales_salary("4000")
 False
 
 >>> v.validate_date("10-09-1991")

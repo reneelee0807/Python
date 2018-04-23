@@ -78,7 +78,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return: True
         """
         v = Validator()
-        result = v.validate_salary("20")
+        result = v.validate_sales_salary("20")
         self.assertTrue(result, 'valid Salary')
 
         def test_validate_salary_is_true_3_digit(self):
@@ -87,7 +87,7 @@ class ValidatorUnitTest(unittest.TestCase):
             :return: True
             """
             v = Validator()
-            result = v.validate_salary("200")
+            result = v.validate_sales_salary("200")
             self.assertTrue(result, 'valid Salary')
 
     def test_validate_salary_is_false_words(self):
@@ -96,7 +96,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return: True
         """
         v = Validator()
-        result = v.validate_salary("seventy thousand")
+        result = v.validate_sales_salary("seventy thousand")
         self.assertFalse(result, 'valid Salary')
 
     def test_validate_salary_is_false_negative_value(self):
@@ -105,7 +105,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return: True
         """
         v = Validator()
-        result = v.validate_salary("-20")
+        result = v.validate_sales_salary("-20")
         self.assertFalse(result, 'invalid Salary')
 
     def test_validate_salary_is_false_too_big(self):
@@ -114,7 +114,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_salary('8000')
+        result = v.validate_sales_salary('8000')
         self.assertFalse(result, 'invalid SALARY')
 
     def test_validate_salary_is_false_too_small(self):
@@ -123,7 +123,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_salary('8')
+        result = v.validate_sales_salary('8')
         self.assertFalse(result, 'invalid SALARY')
 
     def test_validate_salary_is_true_small_but_includes_zero(self):
@@ -132,7 +132,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_salary('008')
+        result = v.validate_sales_salary('008')
         self.assertTrue(result, 'valid SALARY')
 
     def test_validate_date_is_true(self):
@@ -231,12 +231,12 @@ class ValidatorUnitTest(unittest.TestCase):
 
     def test_validate_sales_is_true(self):
         v = Validator()
-        result = v.validate_sales("999")
+        result = v.validate_sales_salary("999")
         self.assertTrue(result, 'Valid Sales value')
 
     def test__validate_sales_is_false(self):
         v = Validator()
-        result = v.validate_sales("1234")
+        result = v.validate_sales_salary("1234")
         self.assertFalse(result, 'Invalid Sales Amount')
 
     def test_15_validate_bmi_is_false_notequal_under(self):
@@ -326,7 +326,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_sales("999")
+        result = v.validate_sales_salary("999")
         self.assertTrue(result, 'Valide Sales value')
 
     def test_05_validate_sales_is_false(self):
@@ -335,7 +335,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_sales("1234")
+        result = v.validate_sales_salary("1234")
         self.assertFalse(result, 'Invalide Sales Amount')
 
     def test_04_validate_sales_is_false_space(self):
@@ -344,7 +344,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_sales(" ")
+        result = v.validate_sales_salary(" ")
         self.assertFalse(result, 'Invalide Sales Amount')
 
     def test_03_validate_sales_is_false_characters(self):
@@ -353,7 +353,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_sales(",")
+        result = v.validate_sales_salary(",")
         self.assertFalse(result, 'Invalide Sales character')
 
     def test_02_validate_sales_is_false_letters(self):
@@ -362,7 +362,7 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_sales("qwer")
+        result = v.validate_sales_salary("qwer")
         self.assertFalse(result, 'Invalide Sales you can not enter letters')
 
     def test_01_validate_sales_is_false_minus(self):
@@ -371,5 +371,5 @@ class ValidatorUnitTest(unittest.TestCase):
         :return:
         """
         v = Validator()
-        result = v.validate_sales("-3")
+        result = v.validate_sales_salary("-3")
         self.assertFalse(result, 'Invalid Sales you cant enter minus values')

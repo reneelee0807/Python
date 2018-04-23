@@ -16,13 +16,9 @@ class Validator:
         condition = '[A-Z][0-9]{3}'
         return self.validate_item(condition, emp_id)
 
-    def validate_sales(self, sales):
+    def validate_sales_salary (self, input):
         condition = '[0-9]{2,3}'
-        return self.validate_item(condition, sales)
-
-    def validate_salary(self, salary):
-        condition = '[0-9]{2,3}'
-        return self.validate_item(condition, salary)
+        return self.validate_item(condition, input)
 
     def validate_age(self, age):
         condition = '[0-9]{2}'
@@ -57,12 +53,11 @@ class Validator:
             items_valid = [self.validate_emp_id(str(employee[0])),
                            self.validate_gender(str(employee[1])),
                            self.validate_age(str(employee[2])),
-                           self.validate_sales(str(employee[3])),
+                           self.validate_sales_salary(str(employee[3])),
                            self.validate_bmi(str(employee[4])),
-                           self.validate_salary(str(employee[5])),
+                           self.validate_sales_salary(str(employee[5])),
                            self.validate_date(str(employee[6]))]
         else:
             items_valid = {False, False, False, False, False, False, False}
 
         return items_valid
-
