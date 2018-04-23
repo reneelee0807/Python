@@ -17,10 +17,21 @@ class Validator:
         return self.validate_item(condition, emp_id)
 
     def validate_sales(self, sales):
-        condition = re.compile('[0-9]{2,3}')
+        condition = '[0-9]{2,3}'
         return self.validate_item(condition, sales)
 
+    def validate_salary(self, salary):
+        condition = '[0-9]{2,3}'
+        return self.validate_item(condition, salary)
 
+
+    @staticmethod
+    def validate_salary(salary):
+        check = re.compile('[0-9]{2,3}')
+        if re.fullmatch(check, salary):
+            return True
+        else:
+            return False
 
     @staticmethod
     def validate_gender(gender):
@@ -43,13 +54,7 @@ class Validator:
 
 
     # Jono's
-    @staticmethod
-    def validate_salary(salary):
-        check = re.compile('[0-9]{2,3}')
-        if re.fullmatch(check, salary):
-            return True
-        else:
-            return False
+
 
     @staticmethod
     def validate_date(date_string):
