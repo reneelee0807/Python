@@ -71,6 +71,13 @@ class Filer:
             else:
                 return True
 
+    @staticmethod
+    def check_file_exists(file_name):
+        if os.path.isfile(file_name):
+            raise FileExistsError('file already exists')
+        else:
+            return True
+
     def save_csv(self, file_name, employee_list):
         try:
             if(self.check_file_name(file_name) == True):
