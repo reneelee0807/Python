@@ -16,16 +16,13 @@ Data is saved
 >>> f.read_csv('saveFile.csv')
 [['A001', 'M', '26', '200', 'Normal', '20', '08-10-1991'], ['A002', 'F', '26', '300', 'Normal', '30', '09-10-1991']]
 
->>> f.save_csv('saveFile1.csv')
-Traceback (most recent call last):
-...
-TypeError: save_csv() missing 1 required positional argument: 'employee_list'
-
 >>> f.save_csv('#######.csv', [1,2,3])
 can not save the file #######.csv
 
->>> Filer.save_txt_file('saveFile.txt',[('A001', 'M', 26, 200, 'Normal', 20, '08-10-1991'), ('A002', 'F', 26, 300, 'Normal', 30, '09-10-1991')])
+>>> f.save_txt_file('saveFile.txt',[('A001', 'M', 26, 200, 'Normal', 20, '08-10-1991'), ('A002', 'F', 26, 300, 'Normal', 30, '09-10-1991')])
 Data saved to file
+
+
 
 """
 

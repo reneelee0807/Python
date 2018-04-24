@@ -219,6 +219,17 @@ class ValidatorUnitTest(unittest.TestCase):
         result = v.validate_all(list1)
         expected = [True, True, True, True, True, True, False]
         self.assertEqual(expected, result, "invalid input")
+
+    def test_validate_all_with_all_false(self):
+        """
+        Test invalid date being passed through and if list recognises it
+        :return:
+        """
+        v = Validator()
+        list1 = ['Adf1', 'Male', '999', 'dfsdf', 'Normal2', '2dfs0', '08/10-1991']
+        result = v.validate_all(list1)
+        expected = [False, False, False, False, False, False, False]
+        self.assertEqual(expected, result, "invalid input")
     def test_validate_bmi_is_true(self):
         v = Validator()
         result = v.validate_bmi("Normal")

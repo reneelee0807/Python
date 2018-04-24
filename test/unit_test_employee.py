@@ -20,3 +20,15 @@ class EmployeeUnitTest(unittest.TestCase):
         e = Employee('A001', 'M', '26', '200', 'Normal', '20', '08-10-1991')
         expected = '26'
         self.assertEqual(expected, e._age)
+
+    def test_get_all_data(self):
+        e = Employee('A001', 'M', '26', '200', 'Normal', '20', '08-10-1991')
+        expected = ['A001', 'M', '26', '200', 'Normal', '20', '08-10-1991']
+        actual = e.get_all_data()
+        self.assertEqual(expected, actual)
+
+    def test_get_all_data(self):
+        e = Employee('A001', 'M', '26', '200', 'Normal', '20', '08-10-1991')
+        expected = ['A001', 'M', '200', 'Normal', '20', '08-10-1991']
+        actual = e.get_all_data()
+        self.assertNotEqual(expected, actual)
