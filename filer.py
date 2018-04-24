@@ -61,13 +61,18 @@ class Filer:
             print('read_csv() missing 1 required argument: file_name')
         except Exception as e:
             print('there is something wrong', file_name)
-		
+
+    @staticmethod
+    def check_file_format(file_name):
+        special_char = "\|!#$%&/()=?»«@£§€{};'<>,"
+        for character in file_name:
+            if character in special_char:
+                raise NameError
+            else:
+                return True
+
     @staticmethod
     def save_csv(file_name, employee_list):
-        """
-
-
-        """
         try:
             special_char = "\|!#$%&/()=?»«@£§€{};'<>,"
             for character in file_name:
@@ -78,11 +83,7 @@ class Filer:
             df = pd.DataFrame(employee_list)
             df.to_csv(file_name, index=False, header=False)
             print("Data is saved")
-        except TypeError as e:
-            raise TypeError('save_csv() missing argument: ', employee_list)
         except OSError as e:
-            print(e)
-        except IndexError as e:
             print(e)
         except Exception as e:
             print('can not save the file', file_name)
@@ -103,7 +104,7 @@ class Filer:
             with open(file_name, "w") as f:
                 for item in employee_list:
                     for i in item:
-                        f.write(str(i)+'$')
+                        f.write(str(i) + '$')
                     f.write("\n")
                 f.close()
                 print("Data saved to file")
@@ -121,4 +122,5 @@ class Filer:
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod(verbose=True)
