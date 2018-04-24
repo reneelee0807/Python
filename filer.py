@@ -80,8 +80,8 @@ class Filer:
 
     def save_csv(self, file_name, employee_list):
         try:
-            if(self.check_file_name(file_name) == True):
-                if (self.check_file_exists(file_name) == True):
+            if self.check_file_name(file_name):
+                if self.check_file_exists(file_name):
                     df = pd.DataFrame(employee_list)
                     df.to_csv(file_name, index=False, header=False)
                     print("Data is saved")
