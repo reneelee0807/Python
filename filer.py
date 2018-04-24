@@ -63,7 +63,7 @@ class Filer:
             print('there is something wrong', file_name)
 
     @staticmethod
-    def check_file_format(file_name):
+    def check_file_name(file_name):
         special_char = "\|!#$%&/()=?»«@£§€{};'<>,"
         for character in file_name:
             if character in special_char:
@@ -71,18 +71,15 @@ class Filer:
             else:
                 return True
 
-    @staticmethod
-    def save_csv(file_name, employee_list):
+
+    def save_csv(self, file_name, employee_list):
         try:
-            special_char = "\|!#$%&/()=?»«@£§€{};'<>,"
-            for character in file_name:
-                if character in special_char:
-                    raise NameError
-            if os.path.isfile(file_name):
-                raise FileExistsError('file already exists')
-            df = pd.DataFrame(employee_list)
-            df.to_csv(file_name, index=False, header=False)
-            print("Data is saved")
+            if(self.check_file_format(file_name) == True):
+                if os.path.isfile(file_name):
+                    raise FileExistsError('file already exists')
+                df = pd.DataFrame(employee_list)
+                df.to_csv(file_name, index=False, header=False)
+                print("Data is saved")
         except OSError as e:
             print(e)
         except Exception as e:
