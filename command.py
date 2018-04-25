@@ -94,13 +94,12 @@ class Command(Cmd):
         /sp to view the salary detail of individual employee in the pie chart
         :return:
         """
-        dictionary = {'/a': 'self.c.print_chart_average()', '/sb': 'self.c.print_chart_sales()'}
+        dictionary = {'/a': 'self.c.print_chart_average()', '/sb': 'self.c.print_chart_sales()',
+                      '/sp': 'self.c.print_chart_pie()'}
         dict_key = option.lower()
         if option and option.strip():
             if dict_key in dictionary:
                 exec(dictionary[dict_key])
-            elif option.lower() == "/sp":
-                self.c.print_chart_pie()
             elif option.lower() == "/sl":
                 self.c.print_chart_line()
             else:
