@@ -94,6 +94,8 @@ class Command(Cmd):
         /sp to view the salary detail of individual employee in the pie chart
         :return:
         """
+        dictionary = {'/a': self.c.print_chart_average()}
+        dict_key = option.lower()
         if option and option.strip():
             if option.lower() == "/a":
                 self.c.print_chart_average()
