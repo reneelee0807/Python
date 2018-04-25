@@ -95,13 +95,11 @@ class Command(Cmd):
         :return:
         """
         dictionary = {'/a': 'self.c.print_chart_average()', '/sb': 'self.c.print_chart_sales()',
-                      '/sp': 'self.c.print_chart_pie()'}
+                      '/sp': 'self.c.print_chart_pie()', '/sl': 'self.c.print_chart_line()'}
         dict_key = option.lower()
         if option and option.strip():
             if dict_key in dictionary:
                 exec(dictionary[dict_key])
-            elif option.lower() == "/sl":
-                self.c.print_chart_line()
             else:
                 print("Invalid input try again")
         else:
