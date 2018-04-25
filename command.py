@@ -97,8 +97,8 @@ class Command(Cmd):
         dictionary = {'/a': self.c.print_chart_average()}
         dict_key = option.lower()
         if option and option.strip():
-            if option.lower() == "/a":
-                self.c.print_chart_average()
+            if dict_key in dictionary:
+                dictionary[dict_key]
             elif option.lower() == "/sb":
                 self.c.print_chart_sales()
             elif option.lower() == "/sp":
