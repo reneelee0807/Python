@@ -94,16 +94,20 @@ class Command(Cmd):
         /sp to view the salary detail of individual employee in the pie chart
         :return:
         """
+        if option and option.strip():
+            self.print_chart(option)
+        else:
+            print("please enter your option")
+
+    def print_chart(self, option):
         dictionary = {'/a': 'self.c.print_chart_average()', '/sb': 'self.c.print_chart_sales()',
                       '/sp': 'self.c.print_chart_pie()', '/sl': 'self.c.print_chart_line()'}
         dict_key = option.lower()
-        if option and option.strip():
-            if dict_key in dictionary:
-                exec(dictionary[dict_key])
-            else:
-                print("Invalid input try again")
+        if dict_key in dictionary:
+            exec(dictionary[dict_key])
         else:
-            print("please enter your option")
+            print("Invalid input try again")
+
 
     # Jono
     def do_quit(self, line):
