@@ -4,19 +4,21 @@ import re
 
 class Validator:
 
-    @staticmethod
-    def validate_item(condition, item):
-        validate = re.compile(condition)
+    dic_condition = {'emp_id': '[A-Z][0-9]{3}'}
+
+    def validate_item(self, item, regex):
+        validate = re.compile(self.dic_condition[regex])
         if re.fullmatch(validate, item):
             return True
         else:
             return False
 
-    def validate_emp_id(self, emp_id):
-        condition = '[A-Z][0-9]{3}'
-        return self.validate_item(condition, emp_id)
 
-    def validate_sales_salary (self, input):
+    # def validate_emp_id(self, emp_id):
+    #     condition = '[A-Z][0-9]{3}'
+    #     return self.validate_item(condition, emp_id)
+
+    def validate_sales_salary(self, input):
         condition = '[0-9]{2,3}'
         return self.validate_item(condition, input)
 
@@ -50,7 +52,7 @@ class Validator:
 
     def validate_all(self, employee):
         if len(employee) >= 7:
-            items_valid = [self.validate_emp_id(str(employee[0])),
+            items_valid = [self.validate(str(employee[0]), 'emp_id'),
                            self.validate_gender(str(employee[1])),
                            self.validate_age(str(employee[2])),
                            self.validate_sales_salary(str(employee[3])),
