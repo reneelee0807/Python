@@ -1,13 +1,12 @@
 class Employee:
     """Base class for all Employees"""
 
-    dictionary = {'self._emp_id': 'emp_id', 'self._gender':'gender',
-                  'self._age': 'age'}
+    dictionary = {'_emp_id': 'emp_id', '_gender':'gender',
+                  '_age': 'age', '_sales': 'sales',
+                  '_bmi': 'bmi'}
 
-    def __init__(self, dictionary, sales, bmi, salary, birthday):
+    def __init__(self, dictionary, salary, birthday):
         self.__dict__.update(dictionary)
-        self._sales = sales
-        self._bmi = bmi
         self._salary = salary
         self._birthday = birthday
 
