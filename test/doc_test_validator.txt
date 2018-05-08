@@ -2,22 +2,22 @@
 >>> from validator import Validator
 >>> v = Validator()
 
->>> v.validate_emp_id("A001")
+>>> v.validate_item("A001", 'emp_id')
 True
 
->>> v.validate_emp_id("A0001")
+>>> v.validate_item("A0001", 'emp_id')
 False
 
->>> v.validate_emp_id("0001")
+>>> v.validate_item("0001", 'emp_id')
 False
 
->>> v.validate_emp_id("AAAA")
+>>> v.validate_item("AAAA", 'emp_id')
 False
 
->>> v.validate_emp_id("A01")
+>>> v.validate_item("A01", 'emp_id')
 False
 
->>> v.validate_emp_id("a001")
+>>> v.validate_item("a001", 'emp_id')
 False
 
 >>> v.validate_gender("F")
@@ -35,22 +35,22 @@ False
 >>> v.validate_gender("E")
 False
 
->>> v.validate_sales_salary("gjhgjh")
+>>> v.validate_item("gjhgjh", 'sales_salary')
 False
 
->>> v.validate_sales_salary("200")
+>>> v.validate_item("200", 'sales_salary')
 True
 
->>> v.validate_sales_salary("12222")
+>>> v.validate_item("12222", 'sales_salary')
 False
 
->>> v.validate_sales_salary("23")
+>>> v.validate_item("23", 'sales_salary')
 True
 
->>> v.validate_sales_salary("200")
+>>> v.validate_item("200", 'sales_salary')
 True
 
->>> v.validate_sales_salary("4000")
+>>> v.validate_item("4000", 'sales_salary')
 False
 
 >>> v.validate_date("10-09-1991")
@@ -62,13 +62,13 @@ False
 >>> v.validate_date("33/22/1991")
 False
 
->>> v.validate_age("10")
+>>> v.validate_item("10",'age')
 True
 
->>> v.validate_age("five")
+>>> v.validate_item("five",'age')
 False
 
->>> v.validate_age("500")
+>>> v.validate_item("500",'age')
 False
 
 >>> v.validate_bmi("OVERWEIGHT")
